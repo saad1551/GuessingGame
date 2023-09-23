@@ -43,7 +43,7 @@
                   <Insets left="80.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <TextArea minHeight="300.0" minWidth="300.0" prefHeight="200.0" prefWidth="175.0">
+            <TextArea fx:id="textarea" minHeight="300.0" minWidth="300.0" prefHeight="200.0" prefWidth="175.0">
                <VBox.margin>
                   <Insets right="500.0" top="20.0" />
                </VBox.margin>

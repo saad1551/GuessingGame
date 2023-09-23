@@ -5,13 +5,23 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
 
 public class PrimaryController implements IView {
     
     @FXML
     private void handleLoadClick() {
-        System.out.println("Clicked");
+        display("Load: under developement");
+    }
+    
+    @FXML
+    private TextArea textarea;
+    
+
+    @Override
+    public void display(String s) {
+        textarea.setText(s);
     }
     
     // For yes/no responses to a question
