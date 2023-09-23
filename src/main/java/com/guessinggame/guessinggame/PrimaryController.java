@@ -8,13 +8,10 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.Button;
 
 public class PrimaryController implements IView {
-
-    @FXML
-    private Button LoadBtn;
     
     @FXML
     private void handleLoadClick() {
-        
+        System.out.println("Clicked");
     }
     
     // For yes/no responses to a question
