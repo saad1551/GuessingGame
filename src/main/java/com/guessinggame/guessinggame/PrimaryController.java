@@ -24,6 +24,11 @@ public class PrimaryController implements IView {
         textarea.setText(s);
     }
     
+    @Override
+    public void append(String s) {
+        textarea.appendText(s);
+    }
+    
     // For yes/no responses to a question
     @FXML
     @Override

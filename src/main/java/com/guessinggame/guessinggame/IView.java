@@ -10,7 +10,7 @@ package com.guessinggame.guessinggame;
  */
 public interface IView {
     void display(String s);
-    //void append(String s);
+    void append(String s);
     String ask(String question);
     Boolean choose(String question);
     String choose(String question, String choice1, String choice2);
