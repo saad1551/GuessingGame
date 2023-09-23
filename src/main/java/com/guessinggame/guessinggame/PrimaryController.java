@@ -2,6 +2,7 @@ package com.guessinggame.guessinggame;
 
 //import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.application.Platform;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
@@ -32,6 +33,11 @@ public class PrimaryController implements IView {
     @FXML
     private void handlePlayGameClick() {
         display("Play Game: under developement");
+    }
+    
+    @FXML
+    private void handleExitClick() {
+        Platform.exit();
     }
 
     
