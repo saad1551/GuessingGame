@@ -11,12 +11,29 @@ import javafx.scene.control.Button;
 public class PrimaryController implements IView {
     
     @FXML
+    private TextArea textarea;
+        
+    @FXML
     private void handleLoadClick() {
         display("Load: under developement");
     }
     
+    
     @FXML
-    private TextArea textarea;
+    private void handleSaveClick() {
+        display("Save: under developement");
+    }
+    
+    @FXML
+    private void handleDisplayTreeClick() {
+        display("Display Tree: under developement");
+    }
+    
+    @FXML
+    private void handlePlayGameClick() {
+        display("Play Game: under developement");
+    }
+
     
 
     @Override
