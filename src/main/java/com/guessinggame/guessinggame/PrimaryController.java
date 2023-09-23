@@ -1,7 +1,7 @@
 package com.guessinggame.guessinggame;
 
 //import java.io.IOException;
-//import javafx.fxml.FXML;
+import javafx.fxml.FXML;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
@@ -9,8 +9,16 @@ import javafx.scene.control.Button;
 
 public class PrimaryController implements IView {
 
+    @FXML
+    private Button LoadBtn;
+    
+    @FXML
+    private void handleLoadClick() {
+        
+    }
     
     // For yes/no responses to a question
+    @FXML
     @Override
     public Boolean choose(String q) {
         String r = choose(q, "Yes", "No");
@@ -19,6 +27,7 @@ public class PrimaryController implements IView {
     
     // more general version of choose - used to implement yes/no 
  // version above
+    @FXML
     @Override
     public String choose(String q, String a1, String a2) {
         ButtonType b1 = new ButtonType( a1 );
@@ -43,6 +52,7 @@ public class PrimaryController implements IView {
 
     
     @Override
+    @FXML
     public String ask(String q) {
         String r = q + "\nText is required.";
         String s = "";
