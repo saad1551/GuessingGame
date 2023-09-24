@@ -42,4 +42,8 @@ public class Game {
      again = view.choose("You won! Play again?");        
     }
   }
+    
+    public void display() {
+        view.display(tree.display());
+    }
 }

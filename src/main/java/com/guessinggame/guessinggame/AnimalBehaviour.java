@@ -32,7 +32,15 @@ public class AnimalBehaviour implements IBehaviour {
     
     @Override
     public Boolean processLeafNode (Node n) {
-        System.out.println("in processLeafNode (under developement)");
-        return true;
+        String question = n.getQuestion();
+        if (view.choose(question)) {
+            return false;
+        } else {
+            String animal = view.ask("You Win! What was your animal ?");
+            String ques = view.ask("Provide a yes/no question that distinguishes between" + animal + " and " + n.data + ". Yes = " + animal + "; no = " + n.data + ".");
+            n.extend(question, n.data, animal);
+            return true;
+        }
     }
+    
 }

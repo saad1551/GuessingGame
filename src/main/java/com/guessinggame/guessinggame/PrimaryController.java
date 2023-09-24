@@ -53,7 +53,7 @@ public class PrimaryController implements IView, Initializable{
     
     @FXML
     private void handleDisplayTreeClick() {
-        display("Display Tree: under developement");
+        game.display();
     }
     
     

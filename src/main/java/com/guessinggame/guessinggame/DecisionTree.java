@@ -32,7 +32,34 @@ public class DecisionTree {
     }
     
     private Boolean execute(Node n) {
-        System.out.println(n.data);
-        return true;
+        if (n.left == null && n.right == null) {
+            Boolean returnVal = behaviour.processLeafNode(n);
+            return returnVal;
+        } else {
+            Boolean returnVal = behaviour.processNonLeafNode(n);
+            return returnVal;
+        }
     }
+    
+       //Generate indented preorder display of tree structure
+    public String display() {
+        StringBuilder sb = new StringBuilder();
+        display(sb, 0, "root:", root);
+        return sb.toString();
+    }
+    
+    private void display(StringBuilder sb, int level, String n, Node node) {
+        if (node == null) {
+            return;
+        }
+        level = level + 2;
+        for (int i = 0; i < level; i++) {
+            sb.append("   ");
+        }
+        sb.append(String.format("%s %s %d\n", n, node.data, node.label));
+        display(sb, level, "left: ", node.left);
+        display(sb, level, "right:", node.right);
+    }
+
+
 }
