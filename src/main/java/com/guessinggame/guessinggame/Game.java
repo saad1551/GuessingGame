@@ -37,9 +37,13 @@ public class Game {
      // tests the result from invoking the tree’s execute() method  a 
      // result of true will mean the player has won, so the 
      // logic below will have to be modified accordingly.
-     tree.execute();
+     if (tree.execute()) {
+         again = view.choose("You won! Play again?");   
+     } else {
+         again = view.choose("I won! Play again?");  
+     }
   
-     again = view.choose("You won! Play again?");        
+          
     }
   }
     

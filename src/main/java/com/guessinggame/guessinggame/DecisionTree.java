@@ -25,10 +25,10 @@ public class DecisionTree {
         if (root == null) {
             Node n = behaviour.emptyTree();
             root = n;
+            return true;
         } else {
-            execute(root);
+            return execute(root);
         }
-        return true;
     }
     
     private Boolean execute(Node n) {
@@ -37,7 +37,11 @@ public class DecisionTree {
             return returnVal;
         } else {
             Boolean returnVal = behaviour.processNonLeafNode(n);
-            return returnVal;
+            if (!returnVal) {
+                return execute(n.getRight());
+            } else {
+                return execute(n.getLeft());
+            }
         }
     }
     
