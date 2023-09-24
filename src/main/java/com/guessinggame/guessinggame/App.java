@@ -22,8 +22,7 @@ public class App extends Application {
             Parent root = loader.load();
             PrimaryController controller = loader.getController();
         
-            Game g = new Game(controller);
-            controller.bind(g);
+            controller.testGame();
 
             scene = new Scene(loadFXML("primary"), 640, 480);
             stage.setScene(scene);

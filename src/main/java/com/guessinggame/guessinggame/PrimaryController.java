@@ -1,26 +1,39 @@
 package com.guessinggame.guessinggame;
 
 //import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.application.Platform;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
 
-public class PrimaryController implements IView {
+public class PrimaryController implements IView, Initializable{
     
     private Game game;
+    private int counter;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        this.game = new Game(this);
+    }
     
     public void bind(Game g) {
-        this.game = g;
+        this.game = g;   
         game.check();
+    }
+    
+    public void testGame(){
+        System.out.println(game);
     }
 
     @FXML
     private void handlePlayGameClick() {
-        game.check();
+        game.play();
     }
     
     @FXML
@@ -28,6 +41,7 @@ public class PrimaryController implements IView {
         
     @FXML
     private void handleLoadClick() {
+//        System.out.println(game);
         display("Load: under developement");
     }
     
@@ -118,4 +132,6 @@ public class PrimaryController implements IView {
         // remove leading and/or trailing whitespace
         return s.trim();
     }
+
+    
 }
