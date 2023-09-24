@@ -1,6 +1,7 @@
 package com.guessinggame.guessinggame;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,12 +19,15 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
-            PrimaryController controller = new PrimaryController();
-            loader.setController(controller);
+            Parent root = loader.load();
+            PrimaryController controller = loader.getController();
         
-        scene = new Scene(loadFXML("primary"), 640, 480);
-        stage.setScene(scene);
-        stage.show();
+            Game g = new Game(controller);
+            controller.bind(g);
+
+            scene = new Scene(loadFXML("primary"), 640, 480);
+            stage.setScene(scene);
+            stage.show();
     }
 
     static void setRoot(String fxml) throws IOException {

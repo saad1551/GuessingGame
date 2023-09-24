@@ -11,6 +11,18 @@ import javafx.scene.control.Button;
 
 public class PrimaryController implements IView {
     
+    private Game game;
+    
+    public void bind(Game g) {
+        this.game = g;
+        game.check();
+    }
+
+    @FXML
+    private void handlePlayGameClick() {
+        game.check();
+    }
+    
     @FXML
     private TextArea textarea;
         
@@ -30,10 +42,7 @@ public class PrimaryController implements IView {
         display("Display Tree: under developement");
     }
     
-    @FXML
-    private void handlePlayGameClick() {
-        display("Play Game: under developement");
-    }
+    
     
     @FXML
     private void handleExitClick() {
@@ -109,9 +118,4 @@ public class PrimaryController implements IView {
         // remove leading and/or trailing whitespace
         return s.trim();
     }
-
-    
-
-
-
 }
