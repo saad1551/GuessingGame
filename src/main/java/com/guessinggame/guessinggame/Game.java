@@ -14,6 +14,8 @@ public class Game {
     
     public Game(IView view) {
         this.view = view;
+        AnimalBehaviour aBehaviour = new AnimalBehaviour(view);
+        tree = new DecisionTree(aBehaviour);
     }
     
     public void check() {
@@ -35,12 +37,9 @@ public class Game {
      // tests the result from invoking the tree’s execute() method  a 
      // result of true will mean the player has won, so the 
      // logic below will have to be modified accordingly.
+     tree.execute();
   
-     if(view.choose("is your animal a cat?"))
-         again = view.choose("I won! Play again?");
-     else
-         again = view.choose("You won! Play again?");        
-     }
+     again = view.choose("You won! Play again?");        
     }
-
+  }
 }
