@@ -8,6 +8,7 @@ import java.util.Formatter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Locale;
+import java.util.Scanner;
 
 /**
  *
@@ -64,6 +65,27 @@ public class DecisionTree {
             save(node.getRight(), f);
         }
     }
+    
+//    private Node insert(Node n, Node t) {
+//        
+//    }
+    
+    // Implement the load method
+    public void load(String fname) throws Exception {
+        try (Scanner scanner = new Scanner(new File(fname))) {
+            while (scanner.hasNextLine()) {
+                int label = Integer.parseInt(scanner.nextLine());
+                String data = scanner.nextLine();
+                // Insert the node into the tree using label as the basis
+//                root = insert(root, label, data);
+            }
+        } catch (FileNotFoundException e) {
+            throw new Exception("File not found: " + fname);
+        }
+    }
+
+
+
 
     
     private Boolean execute(Node n) {

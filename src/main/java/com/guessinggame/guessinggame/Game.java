@@ -31,10 +31,6 @@ public class Game {
         }
     }
     
-    public void check() {
-        System.out.println("initialized");
-    }
-    
     private void help() {
         view.display("Think of an animal.If my tree is non-empty, I will asksome yes/no questions to try to determine what it is.");
     }

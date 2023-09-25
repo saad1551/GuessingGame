@@ -24,7 +24,6 @@ public class PrimaryController implements IView, Initializable{
     
     public void bind(Game g) {
         this.game = g;   
-        game.check();
     }
     
     public void testGame(){
