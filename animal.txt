@@ -1,0 +1,10 @@
+2
+does it have a backbone ?
+1
+jellyfish
+4
+is it the king of the jungle ?
+3
+cat
+5
+lion

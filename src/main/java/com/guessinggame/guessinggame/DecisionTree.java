@@ -4,6 +4,11 @@
  */
 package com.guessinggame.guessinggame;
 
+import java.util.Formatter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Locale;
+
 /**
  *
  * @author user
@@ -30,6 +35,36 @@ public class DecisionTree {
             return execute(root);
         }
     }
+    
+    // Method to label the tree nodes in inorder traversal
+       private int label( Node n, int count ) {
+        if ( n != null )  {
+            int next = label( n.left, count  );
+            n.label = next++;
+            next = label(n.right, next );
+            return next;
+        } 
+        return count;
+    }
+
+    
+    // Public save method
+    public void save(String name) throws Exception {
+        label(root, 1); // Label the tree nodes
+        try (Formatter formatter = new Formatter(new File(name))) {
+            save(root, formatter);
+        }
+    }
+    
+    // Private save method for recursive preorder traversal
+    private void save(Node node, Formatter f) {
+        if (node != null) {
+            f.format("%d%n%s%n", node.getLabel(), node.getData());
+            save(node.getLeft(), f);
+            save(node.getRight(), f);
+        }
+    }
+
     
     private Boolean execute(Node n) {
         if (n.left == null && n.right == null) {
@@ -64,6 +99,4 @@ public class DecisionTree {
         display(sb, level, "left: ", node.left);
         display(sb, level, "right:", node.right);
     }
-
-
 }

@@ -48,7 +48,7 @@ public class PrimaryController implements IView, Initializable{
     
     @FXML
     private void handleSaveClick() {
-        display("Save: under developement");
+        game.save();
     }
     
     @FXML

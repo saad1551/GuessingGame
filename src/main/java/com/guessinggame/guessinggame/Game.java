@@ -18,6 +18,19 @@ public class Game {
         tree = new DecisionTree(aBehaviour);
     }
     
+        // Implement the save method to call the tree's save method
+    public void save() {
+        try {
+            tree.save("animal.txt");
+            // Print a success message in the GUI TextArea
+            // assuming you have a method to display messages in the GUI
+            view.display("Game saved successfully.");
+        } catch (Exception e) {
+            // Handle the exception and display an error message in the GUI
+            view.display("Error: Unable to save the game.");
+        }
+    }
+    
     public void check() {
         System.out.println("initialized");
     }
