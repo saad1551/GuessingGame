@@ -25,10 +25,6 @@ public class PrimaryController implements IView, Initializable{
     public void bind(Game g) {
         this.game = g;   
     }
-    
-    public void testGame(){
-        System.out.println(game);
-    }
 
     @FXML
     private void handlePlayGameClick() {
