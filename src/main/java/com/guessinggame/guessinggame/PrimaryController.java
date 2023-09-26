@@ -37,7 +37,7 @@ public class PrimaryController implements IView, Initializable{
     @FXML
     private void handleLoadClick() {
 //        System.out.println(game);
-        display("Load: under developement");
+        game.load();
     }
     
     

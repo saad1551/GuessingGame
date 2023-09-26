@@ -57,6 +57,10 @@ public class DecisionTree {
         }
     }
     
+//    private Node insert(Node n, Node t) {
+//        
+//    }
+    
     // Private save method for recursive preorder traversal
     private void save(Node node, Formatter f) {
         if (node != null) {
@@ -66,28 +70,35 @@ public class DecisionTree {
         }
     }
     
-//    private Node insert(Node n, Node t) {
-//        
-//    }
-    
+    private Node insert(Node node, int label, String data) {
+        if (node == null) {
+            return new Node(data, label);
+        }
+
+        if (label < node.getLabel()) {
+            Node newLeft = insert(node.getLeft(), label, data);
+            node.left = newLeft;
+        } else if (label > node.getLabel()) {
+            Node newRight = insert(node.getRight(), label, data);
+            node.right = newRight;
+        }
+
+        return node;
+    }
+
     // Implement the load method
     public void load(String fname) throws Exception {
         try (Scanner scanner = new Scanner(new File(fname))) {
             while (scanner.hasNextLine()) {
                 int label = Integer.parseInt(scanner.nextLine());
                 String data = scanner.nextLine();
-                // Insert the node into the tree using label as the basis
-//                root = insert(root, label, data);
+                root = insert(root, label, data);
             }
         } catch (FileNotFoundException e) {
             throw new Exception("File not found: " + fname);
         }
     }
 
-
-
-
-    
     private Boolean execute(Node n) {
         if (n.left == null && n.right == null) {
             Boolean returnVal = behaviour.processLeafNode(n);
@@ -102,7 +113,7 @@ public class DecisionTree {
         }
     }
     
-       //Generate indented preorder display of tree structure
+    //Generate indented preorder display of tree structure
     public String display() {
         StringBuilder sb = new StringBuilder();
         display(sb, 0, "root:", root);

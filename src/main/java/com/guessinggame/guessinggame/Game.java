@@ -32,7 +32,7 @@ public class Game {
     }
     
     private void help() {
-        view.display("Think of an animal.If my tree is non-empty, I will asksome yes/no questions to try to determine what it is.");
+        view.display("Think of an animal.\nIf my tree is non-empty, I will asksome yes/no\nquestions to try to determine what it is.");
     }
     
     public void play() {
@@ -58,5 +58,14 @@ public class Game {
     
     public void display() {
         view.display(tree.display());
+    }
+    
+    public void load() {
+        try {
+            tree.load("animal.txt");
+            view.display("successfully loaded the game");
+        } catch(Exception e) {
+            view.display("Could not load game");
+        }
     }
 }
