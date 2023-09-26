@@ -1,6 +1,10 @@
+4
+does it have a backbone
 2
-does it have a backbone ?
+does it have starry shape ?
 1
 jellyfish
 3
+starfish
+5
 cat

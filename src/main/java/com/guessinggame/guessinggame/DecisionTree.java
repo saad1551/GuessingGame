@@ -88,6 +88,7 @@ public class DecisionTree {
 
     // Implement the load method
     public void load(String fname) throws Exception {
+        root = null;
         try (Scanner scanner = new Scanner(new File(fname))) {
             while (scanner.hasNextLine()) {
                 int label = Integer.parseInt(scanner.nextLine());
