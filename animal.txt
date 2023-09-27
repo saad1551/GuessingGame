@@ -1,10 +1,10 @@
-4
-does it have a backbone
 2
-does it have starry shape ?
+is it a mammal ?
 1
 jellyfish
+4
+is it the king of the jungle ?
 3
-starfish
-5
 cat
+5
+lion
