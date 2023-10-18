@@ -1,0 +1,10 @@
+2
+is it a mammal ?
+1
+jellyfish
+4
+is it the king of the jungle ?
+3
+cat
+5
+lion
